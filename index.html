@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAGON BALL GAME</title>
+    <style>
+    
+            body {
+                background-image: url("./public/img/Fondo.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                min-height: 100vh;
+            }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <h1 class="text-danger display-3"><i class="fa-solid fa-dragon"></i> DRAGON BALL GAME <i class="fa-solid fa-dragon"></i></h1>
+            </div>
+        </div>
+
+        
+        <div id="inicio">
+            <div id="nombres" class="row justify-content-around mt-4">
+                <div class="col-md-5">
+                    <div class="form-floating border border-danger rounded mb-3">
+                        <input type="text" id="player1" class="form-control" placeholder="Jugador 1">
+                        <label class="text-danger" for="player1"><i class="fa-solid fa-user me-2"></i>Jugador 1</label>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-floating border border-primary rounded mb-3">
+                        <input type="text" id="player2" class="form-control" placeholder="Jugador 2">
+                        <label class="text-danger" for="player2"><i class="fa-solid fa-user me-2"></i>Jugador 2</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-around mt-3">
+                <div id="py1" class="col-md-5 text-center">
+                    <p class="text-danger">Seleccionar personaje</p>
+                    <div class="row mt-4">
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-danger border border-danger" src="./public/img/seleccion/sc01.webp" alt="Vegitto"></div>
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-danger border border-danger" src="./public/img/seleccion/sc03.webp" alt="Trunks"></div>
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-danger border border-danger" src="./public/img/seleccion/sc06.webp" alt="Gohan"></div>
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-danger border border-danger" src="./public/img/seleccion/sc05.webp" alt="Goku"></div>
+                    </div>
+                    <button id="btn_player1" type="button" class="btn btn-danger w-100 mt-4">Jugar <i class="fa-solid fa-gamepad"></i></button>
+                </div>
+
+                <div id="py2" class="col-md-5 text-center">
+                    <p class="text-danger">Seleccionar personaje</p>
+                    <div class="row mt-4">
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-primary border border-primary" src="./public/img/seleccion/sc02.webp" alt="Veguetta"></div>
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-primary border border-primary" src="./public/img/seleccion/sc08.webp" alt="Cell"></div>
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-primary border border-primary" src="./public/img/seleccion/sc04.webp" alt="Pikoro"></div>
+                        <div class="col-3"><img class="img-fluid rounded-circle bg-primary border border-primary" src="./public/img/seleccion/sc07.webp" alt="Gogeta"></div>
+                    </div>
+                    <button id="btn_player2" type="button" class="btn btn-primary w-100 mt-4">Jugar <i class="fa-solid fa-gamepad"></i></button>
+                </div>
+            </div>
+        </div>
+
+    
+        <div id="batalla" class="d-none">
+            <h3 id="turno" class="text-center text-warning mt-3"></h3>
+            <div class="row justify-content-around mt-4">
+
+                
+                <div class="col-md-5 text-center">
+                    <h2 id="username1" class="text-danger"></h2>
+                    <p id="personaje1" class="lead fs-4"></p>
+
+                    <div class="stat-label text-success"><span>Vida</span><span id="vida1-txt">100%</span></div>
+                    <div class="progress"><div id="vida1" class="progress-bar bg-success" style="width: 100%;"></div></div>
+
+                    <div class="stat-label text-primary"><span>Ki</span><span id="ki1-txt">100%</span></div>
+                    <div class="progress"><div id="ki1" class="progress-bar bg-primary" style="width: 100%;"></div></div>
+
+                    <div class="stat-label text-info"><span>Energía</span><span id="energia1-txt">100%</span></div>
+                    <div class="progress"><div id="energia1" class="progress-bar bg-info" style="width: 100%;"></div></div>
+
+                    <img id="img1" src="" class="mx-auto d-block" width="50%">
+                    <div class="row">
+                        <div id="btn-py1" class="col">
+                            <button type="button" class="btn btn-warning me-2 mb-3">ATK Basico</button>
+                            <button type="button" class="btn btn-danger me-2 mb-3">ATK Especial</button>
+                            <button type="button" class="btn btn-info me-2 mb-3">Carga KI</button>
+                            <button type="button" class="btn btn-success me-2 mb-3">Semilla <span class="badge bg-dark"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-5 text-center">
+                    <h2 id="username2" class="text-primary"></h2>
+                    <p id="personaje2" class="lead fs-4"></p>
+
+                    <div class="stat-label text-success"><span>Vida</span><span id="vida2-txt">100%</span></div>
+                    <div class="progress"><div id="vida2" class="progress-bar bg-success" style="width: 100%;"></div></div>
+
+                    <div class="stat-label text-primary"><span>Ki</span><span id="ki2-txt">100%</span></div>
+                    <div class="progress"><div id="ki2" class="progress-bar bg-primary" style="width: 100%;"></div></div>
+
+                    <div class="stat-label text-info"><span>Energía</span><span id="energia2-txt">100%</span></div>
+                    <div class="progress"><div id="energia2" class="progress-bar bg-info" style="width: 100%;"></div></div>
+
+                    <img id="img2" src="" class="mx-auto d-block" width="50%">
+                    <div class="row">
+                        <div id="btn-py2" class="col">
+                            <button type="button" class="btn btn-warning me-2 mb-3">ATK Basico</button>
+                            <button type="button" class="btn btn-danger me-2 mb-3">ATK Especial</button>
+                            <button type="button" class="btn btn-info me-2 mb-3">Carga KI</button>
+                            <button type="button" class="btn btn-success me-2 mb-3">Semilla <span class="badge bg-dark"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./bundle.js"></script>
+</body>
+</html>
